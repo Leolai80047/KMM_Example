@@ -1,4 +1,7 @@
 package com.example.kmm_example.data.api
 
-class Dispatchers {
-}
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+
+actual val threadIO: CoroutineDispatcher = Dispatchers.IO
+actual val threadMain: CoroutineDispatcher = Dispatchers.Main

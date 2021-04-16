@@ -13,7 +13,7 @@ fun greet(): String {
     return Greeting().greeting()
 }
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CaptchaPresenter.CaptchaView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,5 +25,10 @@ class MainActivity : AppCompatActivity() {
         val presenter = CaptchaPresenter(this)
         presenter.start()
 
+    }
+
+    override fun show(str: String) {
+        val tv = findViewById<TextView>(R.id.text_view)
+        tv.text = str
     }
 }
